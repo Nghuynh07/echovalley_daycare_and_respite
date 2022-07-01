@@ -67,18 +67,12 @@
       }
     }
     &__text {
-      display: flex;
       text-align: center;
       position: relative;
       font-size: var(--14);
       gap: 10px;
       @media (min-width: 48rem) {
         text-align: left;
-      }
-      div {
-        width: 10px;
-        height: 10px;
-        color: $primary-clr;
       }
     }
   }

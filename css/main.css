@@ -352,7 +352,6 @@ p {
   }
 }
 .services .info__text {
-  display: flex;
   text-align: center;
   position: relative;
   font-size: var(--14);
@@ -362,11 +361,6 @@ p {
   .services .info__text {
     text-align: left;
   }
-}
-.services .info__text div {
-  width: 10px;
-  height: 10px;
-  color: var(--primary-clr);
 }
 
 .about__heading {
