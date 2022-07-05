@@ -1,13 +1,15 @@
 @use "variables" as *;
-// heading
+@use "mixins" as *; // heading
 .hero {
   &__heading {
-    text-align: center;
-    text-transform: uppercase;
-    line-height: 1.5;
-    color: $dark-clr;
+    @include fontStyles(40px, $dark-clr, center);
+    text-transform: capitalize;
+    line-height: 1.2;
     @media (min-width: 48rem) {
-      font-size: clamp(2rem, 0.2857rem + 3.5714vw, 3.5rem);
+      // font-size: clamp(2rem, 0.2857rem + 3.5714vw, 3.5rem);
+    }
+    @media (min-width: 90rem) {
+      text-align: left;
     }
   }
   &__text {
@@ -15,8 +17,36 @@
     text-align: center;
     opacity: 0.75;
     padding: 0 var(--mobile-padding);
+    strong {
+      text-transform: capitalize;
+      color: #3f137b;
+    }
+    @media (min-width: 90rem) {
+      text-align: left;
+      padding: 0;
+    }
   }
 }
+
+.whyUs {
+  &__heading {
+    @include fontStyles(32px, $dark-clr, center);
+    text-transform: capitalize;
+  }
+
+  &__bullet {
+    @include fontStyles(14px, $white-clr, center);
+    line-height: 1.8;
+    list-style: inside;
+    &:first-letter {
+      text-transform: uppercase;
+    }
+    @media (min-width: 90rem) {
+      // text-align: left;
+    }
+  }
+}
+// rates start
 
 // services
 .services {
@@ -25,15 +55,24 @@
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 1px;
+    color: $white-clr;
   }
-
+  &__paragraph {
+    text-align: center;
+    font-size: $sm-font;
+    color: $white-clr;
+    opacity: 0.9;
+    @media (min-width: 48rem) {
+      padding: 50px var(--mobile-padding);
+      box-shadow: 0 0 0 2px $white-clr;
+    }
+  }
   &__text {
     text-align: center;
     opacity: 0.75;
     font-size: $sm-font;
     color: $dark-clr;
     @media (min-width: 48rem) {
-      //   text-align: left;
     }
   }
 
@@ -41,6 +80,7 @@
     text-align: center;
     font-size: 18px;
     text-transform: uppercase;
+    color: $white-clr;
     span {
       font-weight: bold;
       margin-left: 10px;
@@ -55,26 +95,20 @@
       opacity: 0.75;
     }
   }
+}
 
-  .info {
-    &__heading {
-      text-transform: capitalize;
-      letter-spacing: 1px;
-      opacity: 0.75;
-      text-align: center;
-      @media (min-width: 48rem) {
-        text-align: left;
-      }
-    }
-    &__text {
-      text-align: center;
-      position: relative;
-      font-size: var(--14);
-      gap: 10px;
-      @media (min-width: 48rem) {
-        text-align: left;
-      }
-    }
+.info {
+  &__heading {
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    opacity: 0.75;
+    text-align: center;
+  }
+  &__text {
+    text-align: center;
+    position: relative;
+    font-size: var(--14);
+    gap: 10px;
   }
 }
 
@@ -85,7 +119,7 @@
     text-transform: uppercase;
   }
   &__text {
-    text-align: justify;
+    text-align: center;
   }
 }
 
@@ -130,28 +164,17 @@
     font-size: 32px;
     text-align: center;
     text-transform: uppercase;
-    // @media (min-width: 48rem) {
-    //   grid-column: 1 / -1;
-    //   text-align: left;
-    // }
   }
   &__subheading {
     font-size: 20px;
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 2px;
-    // @media (min-width: 48rem) {
-    //   grid-column: 1 / -1;
-    //   text-align: left;
-    // }
   }
 
   &__text {
     font-size: $reg-font;
     text-transform: capitalize;
     text-align: center;
-    // @media (min-width: 48rem) {
-    //   text-align: left;
-    // }
   }
 }
