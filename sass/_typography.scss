@@ -3,25 +3,25 @@
 .hero {
   &__heading {
     @include fontStyles(40px, $dark-clr, center);
-    text-transform: capitalize;
+    text-transform: uppercase;
     line-height: 1.2;
+    text-shadow: 1px 2px 2px rgba(0 0 0 /0.3);
     @media (min-width: 48rem) {
-      // font-size: clamp(2rem, 0.2857rem + 3.5714vw, 3.5rem);
+      font-size: clamp(2rem, 0.2857rem + 3.5714vw, 3rem);
     }
-    @media (min-width: 90rem) {
+    @media (min-width: 1000px) {
       text-align: left;
     }
   }
   &__text {
-    font-size: $sm-font;
-    text-align: center;
+    @include fontStyles($sm-font, $dark-clr, center);
     opacity: 0.75;
     padding: 0 var(--mobile-padding);
     strong {
       text-transform: capitalize;
       color: #3f137b;
     }
-    @media (min-width: 90rem) {
+    @media (min-width: 1000px) {
       text-align: left;
       padding: 0;
     }
